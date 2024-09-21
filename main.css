@@ -1,0 +1,115 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Arial', sans-serif;
+}
+
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: linear-gradient(to right, #2c3e50, #4ca1af); /* Added gradient background */
+}
+
+.calculator {
+	background-color: #22252D;
+	width: 100%;
+	max-width: 300px; 
+	min-height: 500px; 
+	display: flex;
+	flex-direction: column;
+	border-radius: 1rem;
+	overflow: hidden;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Added shadow */
+}
+
+.display {
+	min-height: 150px; 
+	padding: 1rem; 
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	color: white;
+	text-align: right;
+	flex: 1 1 0%;
+	background: rgba(0, 0, 0, 0.7); /* Dark background for display */
+	border-bottom: 2px solid #26FED7; /* Added border */
+}
+
+.display .content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	max-width: 100%;
+	overflow: auto;
+}
+
+.display .input {
+	width: 100%;
+	font-size: 1rem; 
+	margin-bottom: 0.5rem;
+	color: #26FED7; /* Input color */
+}
+
+.display .output {
+	font-size: 2.5rem; 
+	font-weight: 700;
+	width: 100%;
+	white-space: nowrap;
+	color: #FFFFFF; /* Output color */
+}
+
+.display .operator {
+	color: #EB6666;
+}
+
+.keys {
+	background-color: #292D36;
+	padding: 1rem; 
+	border-radius: 1rem 1rem 0 0; 
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	grid-gap: 0.5rem; 
+	box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.keys .key {
+	position: relative;
+	cursor: pointer;
+	display: block;
+	height: 0;
+	padding-top: 100%;
+	background-color: #262933;
+	border-radius: 0.75rem; 
+	transition: 0.2s;
+	user-select: none;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Added button shadow */
+}
+
+.keys .key:hover {
+	background-color: #3b3f47; /* Hover effect */
+	transform: translateY(-2px); /* Lift effect */
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More pronounced hover shadow */
+}
+
+.keys .key span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 1.5rem; 
+	font-weight: 700;
+	color: #FFF;
+}
+
+.keys .key.operator span {
+	color: #EB6666; /* Operator color */
+}
+
+.keys .key.action span {
+	color: #26FED7; /* Action key color */
+}
